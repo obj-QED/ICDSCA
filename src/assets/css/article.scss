@@ -1,0 +1,129 @@
+.article {
+  &__header {
+    padding: 72px 0;
+  }
+
+  &__title {
+    font-family: 'DIN Next W1G', Arial;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 100%;
+    padding-right: 30px;
+    color: #2f323a;
+  }
+
+  &__content {
+    margin: 10px auto 60px;
+    max-width: 1000px;
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 36px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-family: 'DIN Next W1G', Arial;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 35px;
+      line-height: 100%;
+
+      color: #2f323a;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 30px;
+      margin-bottom: 24px;
+      li {
+        margin-bottom: 8px;
+      }
+      li::marker {
+        content: url("data:image/svg+xml,%3Csvg width='24' height='6' viewBox='0 0 6 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='3' cy='3' r='2.25' stroke='%231B4EA9' stroke-width='1.5'/%3E%3C/svg%3E%0A ");
+      }
+    }
+    ol {
+      list-style-type: decimal;
+      padding-left: 30px;
+      margin-bottom: 24px;
+      li {
+        margin-bottom: 8px;
+      }
+    }
+
+    blockquote,
+    blockquote > p {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 32px;
+      padding-left: 15px;
+      padding-right: 15px;
+      color: #2f323a;
+    }
+
+    h3 {
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 25px;
+
+      color: #2f323a;
+    }
+
+    a {
+      font-weight: bold;
+      color: $blue;
+
+      &:hover {
+        color: $red;
+      }
+    }
+
+    p {
+      padding-bottom: 18px;
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 25px;
+      color: #2f323a;
+    }
+    img {
+      padding-bottom: 10px;
+    }
+  }
+
+  @media (max-width: $breakpoint-mobile) {
+    &__content {
+      margin: 20px auto;
+    }
+    &__title {
+      font-size: 32px;
+    }
+
+    &__header {
+      padding-top: 64px;
+      padding-bottom: 20px;
+    }
+    &__image-row {
+      padding: 0 !important;
+    }
+  }
+
+  &__last-updated {
+    color: $blackboard-grey;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 18px;
+    font-family: 'DIN Next W1G', Arial;
+    margin: 20px 0 42px;
+  }
+  &__markdown {
+  }
+}

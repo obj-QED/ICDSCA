@@ -1,0 +1,23 @@
+.row {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 80px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  @media (max-width: 1200px) {
+    padding: 0 40px;
+  }
+
+  @media (max-width: 992px) {
+    padding: 0 24px;
+  }
+
+  @media (max-width: 640px) {
+    padding: 0 15px;
+  }
+}
+
+.page-screen {
+  min-height: 100vh;
+}

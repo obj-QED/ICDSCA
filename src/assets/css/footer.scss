@@ -1,0 +1,241 @@
+.footer {
+  $this: &;
+  padding: 90px 0 60px;
+  background: linear-gradient(
+    108.1deg,
+    rgba(#2f323a, 0.98) 17.52%,
+    rgba(#191b20, 0.98) 96.86%
+  );
+  color: #fff;
+
+  &--light {
+    background: white;
+
+    .footer__socials {
+      border-top: 1px solid $ivory-grey;
+      border-bottom: 1px solid $ivory-grey;
+    }
+    .footer__socials-text {
+      color: $pewter-grey;
+    }
+    .footer__copyright {
+      color: $pewter-grey;
+    }
+    .footer__social-link {
+      background: rgba($cool-grey, 0.1);
+      color: $cool-grey;
+    }
+  }
+
+  a {
+    transition: color 0.15s ease-in-out;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__contact-item {
+    flex: 1;
+    margin-right: 50px;
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 600;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__contact-headline {
+    font-family: 'DIN Next W1G', Arial;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $cool-grey;
+    margin-bottom: 18px;
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 100px;
+    padding: 36px 0;
+    border-top: 1px solid rgba($cool-grey, 0.9);
+    border-bottom: 1px solid rgba($cool-grey, 0.9);
+
+    &.noContact {
+      margin-top: -40px;
+    }
+  }
+
+  &__socials-text {
+    color: $cool-grey;
+    font-family: 'DIN Next W1G', Arial;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  &__social-text-description {
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0;
+    text-transform: none;
+    padding-top: 6px;
+    display: block;
+  }
+
+  &__socials-links {
+    display: flex;
+  }
+
+  &__social-link {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    border-radius: 50%;
+    background: rgba($cool-grey, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 16px;
+    transition: background-color 0.15s ease-in-out !important;
+    color: #ebeaed;
+
+    &.fb {
+      &:hover {
+        background-color: #5067af;
+      }
+    }
+    &.tw {
+      &:hover {
+        background-color: #5ea0ee;
+      }
+    }
+    &.in {
+      &:hover {
+        background-color: #4172af;
+      }
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    font-weight: 600;
+    font-size: 12px;
+    color: rgba($cool-grey, 0.75);
+    margin: 16px 0 0;
+  }
+
+  &__copyright-privacy {
+    width: 100px;
+    text-align: left;
+  }
+
+  &__form {
+    box-sizing: border-box;
+    padding: 70px 90px;
+    background: linear-gradient(106.09deg, #eb5c18 4.09%, #fdb01a 165.69%);
+    color: #fff;
+    margin: -180px 0 60px;
+
+    @media (max-width: $breakpoint-desktop-medium) {
+      padding: 50px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 30px;
+    }
+  }
+
+  &__form-text-label {
+    font-family: 'DIN Next W1G', Arial;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-transform: uppercase;
+  }
+
+  &__form-text-title {
+    max-width: 740px;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 54px;
+    margin: 30px 0;
+
+    @media (max-width: $breakpoint-desktop-medium) {
+      font-size: 34px;
+      line-height: 44px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  }
+
+  &__form-popup {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 9990;
+    top: 0;
+    right: 9999px;
+    opacity: 0;
+    transform: translate(0, 10%);
+    transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+    //display: flex;
+    //flex-direction: column;
+    //align-items: center;
+    //justify-content: center;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+
+    &.visible {
+      opacity: 1;
+      right: 0;
+      transform: translate(0, 0);
+    }
+  }
+
+  &__top {
+    position: absolute;
+    right: 32px;
+    cursor: pointer;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none !important;
+
+    @media (max-width: $breakpoint-desktop-small-medium) {
+      right: 30px;
+      margin-top: -200px;
+    }
+
+    @media (max-width: $breakpoint-small-mobile) {
+      right: 16px;
+      margin-top: -200px;
+    }
+  }
+}

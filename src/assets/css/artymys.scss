@@ -1,0 +1,98 @@
+.artymys {
+  background: #dfeef8;
+  margin: 0 24px 24px;
+  @media (max-width: $breakpoint-desktop-small) {
+    margin: 0;
+  }
+
+  .current {
+    display: inline-flex;
+    position: relative;
+    width: 100%;
+    padding: 48px 18px;
+    @media (max-width: $breakpoint-desktop-small) {
+      padding: 60px;
+    }
+
+    &__content {
+      display: inline-flex;
+      align-items: center;
+      color: #1b4ea9;
+      z-index: 10;
+      @media (max-width: $breakpoint-desktop-small) {
+        flex-direction: column;
+      }
+
+      .icon {
+        max-width: 268px;
+        @media (max-width: $breakpoint-desktop-small) {
+          margin-right: auto;
+        }
+      }
+
+      .descpt {
+        margin-left: 24px;
+        @media (max-width: $breakpoint-desktop-small) {
+          margin-top: 58px;
+          margin-left: 0;
+        }
+        .title {
+          font-family: "DIN Next W1G", Arial;
+          font-size: 39px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 47px;
+          margin-bottom: 4px;
+        }
+        .text {
+          font-family: "DIN Next W1G", Arial;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 24px;
+        }
+        .link {
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 22px;
+          color: #ea5b1c;
+          display: block;
+          margin-top: 16px;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+
+      img {
+        height: 100%;
+        object-fit: contain;
+        @media (max-width: $breakpoint-desktop-small) {
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+  @media( max-width: 480px) {
+    .current {
+      padding: 30px 20px;
+      .descpt {
+        margin-top: 20px;
+        .title {
+          font-size: 32px;
+          font-weight: normal;
+        }
+        .text {
+          font-size: 16px;
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}

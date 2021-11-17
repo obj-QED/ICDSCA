@@ -1,0 +1,57 @@
+.input-text {
+  position: relative;
+  margin: 10px 0;
+
+  input,
+  textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid $pewter-grey;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 15px 0;
+    border-radius: 0;
+    color: $carbon-black;
+    outline: none;
+    transition: border-color .15s ease-in-out;
+    resize: none;
+
+    &::placeholder {
+      font-weight: 400;
+      color: $cool-grey;
+    }
+
+    &:hover {
+      border-color: $cool-grey;
+    }
+
+    &:focus {
+      border-color: $red;
+    }
+  }
+
+  textarea {
+    height: 100px;
+  }
+
+  &.error {
+    input,
+    textarea {
+      border-color: $living-coral !important;
+    }
+
+    .react-select__control {
+      border-bottom: 2px solid $living-coral !important;
+    }
+  }
+
+  &__error {
+    color: $living-coral;
+    font-size: 13px;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+  }
+}

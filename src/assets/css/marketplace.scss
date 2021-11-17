@@ -1,0 +1,51 @@
+.marketplace {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url('../images/marketplace_bg.webp');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 40px 0;
+  box-sizing: border-box;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 800px;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .headline {
+    margin-top: 36px;
+    font-family: 'DIN Next W1G', Arial;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: left;
+    letter-spacing: 0.02em;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  &__description {
+    font-family: 'DIN Next W1G', Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  &__link {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}

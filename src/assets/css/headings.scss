@@ -1,0 +1,69 @@
+.headline {
+  display: inline-block;
+  font-family: 'DIN Next W1G', Arial;
+  font-weight: bold;
+  font-size: 55px;
+  line-height: 66px;
+  letter-spacing: -2px;
+  position: relative;
+  margin-bottom: 32px;
+
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 58px;
+    left: 0;
+    z-index: 0;
+    display: block;
+    width: 64%;
+    height: 8px;
+    background: linear-gradient(165.37deg, #F96430 2.64%, #FDB01A 166.68%);
+   }
+   @media (max-width: $breakpoint-mobile) {
+   &.supply-chain {
+     &::before{
+      top: 120px;
+      left: 50px;
+      width: 54%;
+     }
+   }
+  }
+  &.visibility-animation {
+    transform: translate(0, 40px);
+    opacity: .4;
+    transition: all .25s ease-out .15s;
+  }
+
+  &.visible {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  &.hide-underline {
+    &:before {
+      display: none;
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'DIN Next W1G', Arial;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+}
+
+
+h2 {
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+}

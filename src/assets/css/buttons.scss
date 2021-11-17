@@ -1,0 +1,117 @@
+.btn-dark {
+  cursor: pointer;
+  background: rgba(255,255,255,.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  min-width: 256px;
+  padding: 0 24px;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.5px;
+  color: $red;
+  font-family: 'DIN Next W1G', Arial;
+  transition: background-color .15s ease-in-out;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: #fff;
+  //outline: none !important;
+
+  //&:focus {
+  //  background: #fff;
+  //}
+
+  &:focus,
+  &:hover {
+    background: $red;
+    color: #fff;
+  }
+
+  &[disabled] {
+    background: rgba(255,255,255,.2);
+    color: $red;
+
+    &:hover,
+    &:focus {
+      cursor: not-allowed;
+      color: $red;
+      background: rgba(255,255,255,.2);
+    }
+  }
+}
+
+.btn-light {
+  cursor: pointer;
+  background: rgba(255,255,255,.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  min-width: 256px;
+  padding: 0 24px;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.5px;
+  color: #fff;
+  font-family: 'DIN Next W1G', Arial;
+  transition: background-color .15s ease-in-out, color .15s ease-in-out;
+  font-weight: 500;
+  text-transform: uppercase;
+  //outline: none !important;
+
+  //&:focus {
+  //  background: #fff;
+  //}
+
+  &:hover,
+  &:focus {
+    background: #fff;
+    color: $red;
+  }
+}
+
+.btn-red {
+  cursor: pointer;
+  background: $red;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  min-width: 256px;
+  padding: 0 24px;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.5px;
+  color: #fff;
+  font-family: 'DIN Next W1G', Arial;
+  transition: background-color .15s ease-in-out, color .15s ease-in-out;
+  font-weight: 500;
+  text-transform: uppercase;
+  //outline: none !important;
+
+  //&:focus {
+  //  background: #fff;
+  //}
+
+  &:focus,
+  &:hover {
+    background: #fff;
+    color: $red;
+  }
+
+  &[disabled] {
+    background: #fff;
+    color: $cool-grey;
+    cursor: not-allowed;
+  }
+}
+
+.btn-medium {
+  height: 36px;
+  min-width: 150px;
+}
+
+.btn-rounded {
+  border-radius: 2px;
+}

@@ -1,0 +1,47 @@
+.lang-select {
+  // width: 184px;
+  height: 48px;
+  outline: none;
+  font-family: 'DIN Next W1G', Arial;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 15px;
+  // padding-bottom: 20px;
+
+  color: #52545a;
+
+  a {
+    outline: none;
+    color: #52545a;
+  }
+
+  &__list {
+    margin-top: 8px;
+  }
+
+  &__label {
+    @media (min-width: $breakpoint-mobile) {
+      width: 184px;
+    }
+  }
+
+  &__item {
+    width: 184px;
+  }
+
+  &__item,
+  &__label {
+    &:focus,
+    &:active {
+      outline: none;
+    }
+    &:hover {
+      background: rgba(213, 211, 211, 0.4);
+    }
+
+    height: 48px;
+    background: rgba(213, 211, 211, 0.2);
+    border-radius: 8px;
+  }
+}

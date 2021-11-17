@@ -1,0 +1,314 @@
+.current-activities {
+  $this: &;
+  margin: 25px 0;
+
+  &__wrapper {
+    display: flex;
+    justify-content: flex-start;
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0 0 30%;
+    width: 30%;
+    max-width: 30%;
+    margin-right: 100px;
+
+    img {
+      width: 100%;
+    }
+
+    @media (max-width: $breakpoint-desktop-small) {
+      margin-right: 50px;
+      flex: 0 0 35%;
+      width: 35%;
+      max-width: 35%;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      flex: 0 0 100%;
+      width: 100%;
+      max-width: 375px;
+      min-height: 500px;
+      margin: 0 auto;
+    }
+  }
+
+  &__image-wrapper {
+    flex: 0 0 calc(100vw / 2 - 280px);
+    width: calc(100vw / 2 - 280px);
+    min-width: 345px;
+    overflow: hidden;
+    max-height: 105vh;
+
+    @media (max-width: $breakpoint-desktop-large) {
+      flex: 0 0 calc(100vw / 2 - 230px);
+      width: calc(100vw / 2 - 230px);
+      min-width: 480px;
+      overflow: hidden;
+      max-height: 780px;
+    }
+
+    @media (max-width: $breakpoint-desktop-medium) {
+      min-width: 450px;
+      max-height: 130vh;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      min-width: 345px;
+      max-height: 100vh;
+    }
+  }
+
+  &__image-text-wrapper {
+    position: absolute;
+    bottom: 10vh;
+    right: 0;
+    width: 100%;
+    min-width: 450px;
+    box-sizing: border-box;
+    padding: 30px;
+    font-family: 'DIN Next W1G', Arial;
+    color: #fff;
+    background: linear-gradient(108.32deg, #F96430 2.64%, #FDB01A 166.68%);
+
+    @media (max-width: 1279px) {
+      width: calc(100% + 40px);
+      min-width: 0;
+    }
+  }
+
+  &__image-text-title {
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 52px;
+    color: $light-grey;
+    text-transform: uppercase;
+  }
+  &__image-text-description {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    flex: 1;
+    flex-direction: column;
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0 0;
+    overflow: hidden;
+
+    @media (max-width: $breakpoint-mobile) {
+      min-height: 750px;
+    }
+  }
+
+  &__content-slides {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding-left: 2px;
+    box-sizing: border-box;
+  }
+
+  &__content-slide-wrapper {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-100%, 0);
+    margin-bottom: 40px;
+    transition: visibility 0s linear 0.3s, transform .4s ease-in-out, opacity .25s ease-in-out;
+
+    &.active {
+      visibility: visible;
+      position: relative;
+      opacity: 1;
+      transform: translate(0, 0);
+      transition: visibility 0s linear 0s, transform .4s ease-in-out, opacity .25s ease-in-out;
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    font-family: 'DIN Next W1G', Arial;
+    font-weight: bold;
+    font-size: 55px;
+    line-height: 66px;
+    letter-spacing: -2px;
+    position: relative;
+    margin-bottom: 32px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 12px;
+      left: 0;
+      z-index: -1;
+      display: block;
+      width: 77%;
+      height: 8px;
+      background: linear-gradient(165.37deg, #F96430 2.64%, #FDB01A 166.68%);
+    }
+  }
+
+  &__content-links {
+    max-width: 460px;
+  }
+
+  &__content-link-item {
+    display: block;
+    margin-bottom: 30px;
+    //outline: none !important;
+    //border: 1px solid transparent;
+
+    //&:focus {
+    //  #{$this}__content-link-title {
+    //    color: $red;
+    //  }
+    //}
+
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    //&:hover {
+    //  #{$this}__content-link-title {
+    //    color: $red;
+    //  }
+    //}
+  }
+
+  &__content-link-icon {
+    margin-bottom: 12px;
+  }
+
+  &__content-link-title {
+    font-family: 'DIN Next W1G', Arial;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: $blue;
+    transition: color .15s ease-in-out;
+    margin-bottom: 0;
+
+    @media (max-width: $breakpoint-desktop-medium) {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+
+  &__content-link-description {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: $blackboard-grey;
+    margin-top: 8px;
+  }
+
+  &__info {
+    max-width: 320px;
+    padding-top: 36px;
+    margin-top: 36px;
+    position: relative;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 40%;
+      height: 1px;
+      background: $red;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    a {
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: underline;
+      color: $blue;
+      transition: color .15s ease-in-out;
+
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+
+  &__info-description {
+    font-style: italic;
+    font-weight: 600;
+    font-size: 14px;
+    color: $charcoal-grey;
+    margin: 0 0 20px;
+  }
+
+  &__content-slides-link {
+    //display: flex;
+    margin-top: auto;
+    width: calc(36vw + 10px);
+    max-width: 586px;
+    min-width: 260px;
+
+    .slick-slide > div {
+      outline: none !important;
+      border: none !important;
+    }
+  }
+
+  &__content-slides-item {
+    width: 18vw;
+    height: 14vw;
+    max-width: 288px;
+    max-height: 228px;
+    min-width: 125px;
+    min-height: 85px;
+    outline: none !important;
+    border: none !important;
+  }
+
+  &__content-slides-link-item {
+    width: 18vw;
+    height: 14vw;
+    max-width: 288px;
+    //margin: 0 5px;
+    max-height: 228px;
+    min-width: 125px;
+    min-height: 85px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    cursor: pointer;
+    opacity: .2;
+    outline-color: $red;
+    //border: 1px solid transparent;
+    transition: opacity .15s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:focus {
+      opacity: 1;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

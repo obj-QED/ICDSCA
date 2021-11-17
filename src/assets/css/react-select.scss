@@ -1,0 +1,95 @@
+/* over write css in react-select module */
+
+.react-select-container {
+  outline: none !important;
+}
+
+.react-select {
+
+  &__menu-list {
+    max-height: 200px !important;
+  }
+
+  &__control {
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    outline: none !important;
+    border: none !important;
+    border-bottom: 2px solid $pewter-grey !important;
+
+    &:hover {
+      border-bottom: 2px solid $cool-grey !important;
+    }
+  }
+
+  &__control--is-focused {
+    border-bottom: 2px solid $red !important;
+    box-shadow: none !important;
+
+    &:hover {
+      border-bottom: 2px solid $red !important;
+    }
+  }
+
+  &__placeholder {
+    font-size: 16px !important;
+    line-height: 22px !important;
+    font-weight: 400 !important;
+    color: $cool-grey !important;
+    margin: 0 !important;
+  }
+
+  &__value-container {
+    padding: 0 !important;
+  }
+
+  &__value-container {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  &__menu {
+    padding: 10px 15px 6px;
+    box-sizing: border-box;
+    background: #FFFFFF !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 0 0 5px 5px !important;
+    border-top: 2px solid $blue !important;
+    margin-top: -2px !important;
+  }
+
+  &__option {
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    line-height: 22px !important;
+    color: $carbon-black !important;
+    cursor: pointer !important;
+    padding: 7px 12px !important;
+  }
+
+  &__option--is-focused {
+    background: $light-grey !important;
+  }
+
+  &__option--is-selected {
+    background: $red !important;
+    color: #fff !important;
+  }
+
+  &__control--menu-is-open {
+    .react-select__dropdown-indicator {
+      color: $red;
+
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+
+  &__dropdown-indicator {
+    &:hover {
+      color: $red !important;
+    }
+  }
+}

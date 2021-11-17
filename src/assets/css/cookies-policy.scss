@@ -1,0 +1,38 @@
+.cookies-policy {
+  &__header {
+    padding: 36px 0;
+    border-bottom: 1px solid $ivory-grey;
+  }
+
+  &__content {
+    margin: 100px auto;
+    max-width: 750px;
+
+    h2, h3, h4 {
+      margin-top: 36px;
+      margin-bottom: 24px;
+    }
+
+    a {
+      font-weight: bold;
+      color: $blue;
+
+      &:hover {
+        color: $red;
+      }
+    }
+
+    p {
+      padding-bottom: 18px;
+    }
+  }
+
+  &__last-updated {
+    color: $blackboard-grey;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 18px;
+    font-family: 'DIN Next W1G', Arial;
+    margin: 20px 0 60px;
+  }
+}

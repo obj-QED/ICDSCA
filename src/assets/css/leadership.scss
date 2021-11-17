@@ -1,0 +1,186 @@
+.leadership {
+  $this: &;
+
+  position: relative;
+  padding: 80px 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-x: hidden;
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .headline {
+      margin-bottom: 28px;
+    }
+  }
+
+  &__description {
+    max-width: 805px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+  }
+
+  &__persons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 50px;
+  }
+
+  &__person-item {
+    flex: 0 0 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+    cursor: pointer;
+    outline: none !important;
+
+    &:hover,
+    &:focus {
+      #{$this}__person-name {
+        color: $red;
+      }
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+      flex: 0 0 50%;
+    }
+  }
+
+  &__person-image {
+    margin-bottom: 15px;
+    max-width: 130px;
+  }
+
+  &__person-name,
+  &__person-details-name {
+    font-family: 'DIN Next W1G', Arial;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $blue;
+    padding-bottom: 6px;
+    transition: color .15s ease-in-out;
+  }
+
+  &__person-position {
+    font-family: 'DIN Next W1G', Arial;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
+    text-align: center;
+    color: $blackboard-grey;
+    max-width: 180px;
+  }
+
+  &__person-details {
+    position: absolute;
+    z-index: 3;
+    right: 9999px;
+    top: 0;
+    width: 50vw;
+    height: 100%;
+    min-width: 375px;
+    background: #fff;
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.4);
+    transform: translate(calc(100% + 80px), 0);
+    transition: transform .2s ease-in-out .1s;
+
+    &.active {
+      right: 0;
+      transform: translate(0, 0);
+      transition: transform .2s ease-in-out .1s;
+    }
+  }
+
+  &__person-details-wrapper {
+    max-width: 780px;
+    padding: 60px;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: $breakpoint-mobile) {
+      padding: 30px;
+    }
+  }
+
+  &__person-details-content {
+    position: relative;
+  }
+
+  &__person-details-image {
+    margin-bottom: 20px;
+    max-width: 130px;
+  }
+
+  &__person-details-position {
+    font-family: 'DIN Next W1G', Arial;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: $blackboard-grey;
+    margin-bottom: 60px;
+  }
+
+  &__person-details-description {
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+
+  &__person-details-close {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    cursor: pointer;
+    fill: currentColor;
+    color: $cool-grey;
+    transition: color .15s ease-in-out;
+    outline: none !important;
+
+    &:hover,
+    &:focus {
+      color: #000;
+    }
+  }
+
+  &__person-details-controls {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
+  }
+
+  &__arrow {
+    fill: currentColor;
+    color: $cool-grey;
+    cursor: pointer;
+    outline: none !important;
+
+    &:hover,
+    &:focus {
+      color: $red;
+    }
+
+    &:nth-child(2) {
+      transform: rotate(180deg);
+    }
+  }
+}
