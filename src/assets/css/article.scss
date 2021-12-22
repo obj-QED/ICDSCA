@@ -4,7 +4,7 @@
   }
 
   &__title {
-    font-family: 'DIN Next W1G', Arial;
+    font-family: "DIN Next W1G", Arial;
     font-style: normal;
     font-weight: bold;
     font-size: 40px;
@@ -12,7 +12,12 @@
     padding-right: 30px;
     color: #2f323a;
   }
-
+  &__video {
+    &::-webkit-media-controls-enclosure {
+      display: none;
+      overflow: hidden;
+    }
+  }
   &__content {
     margin: 10px auto 60px;
     max-width: 1000px;
@@ -26,7 +31,7 @@
       margin-bottom: 24px;
     }
     h2 {
-      font-family: 'DIN Next W1G', Arial;
+      font-family: "DIN Next W1G", Arial;
       font-style: normal;
       font-weight: bold;
       font-size: 35px;
@@ -121,7 +126,7 @@
     text-transform: uppercase;
     font-size: 15px;
     line-height: 18px;
-    font-family: 'DIN Next W1G', Arial;
+    font-family: "DIN Next W1G", Arial;
     margin: 20px 0 42px;
   }
   &__markdown {

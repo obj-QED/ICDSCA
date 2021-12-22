@@ -150,15 +150,8 @@ exports.createPages = async ({ graphql, actions }) => {
               Short_description
               lang
               Content
-              Hero_image {
-                publicURL
-                childImageSharp {
-                  fixed(quality: 100, width: 1200) {
-                    src
-                  }
-                }
-              }
               Preview_image {
+                publicURL
                 childImageSharp {
                   fluid(
                     maxWidth: 404
@@ -170,12 +163,15 @@ exports.createPages = async ({ graphql, actions }) => {
                   }
                 }
               }
-              slug
+              url
+              Video_field {
+                absolutePath
+                publicURL
+              }
             }
             id
             Published
             strapiId
-            Full_image
             updated_at
             Posted_date
             created_at
@@ -224,16 +220,15 @@ exports.createPages = async ({ graphql, actions }) => {
       footerData = assignInWith(
         { ...footerLangs[0] },
         find(footerLangs, ({ lang }) => lang === article.lang) ||
-          footerLangs[0],
+        footerLangs[0],
         (val, srcVal) => {
           return srcVal && srcVal.length > 0 ? srcVal : val;
         }
       );
 
       createPage({
-        path: `newsroom/${article.lang === 'en' ? '' : `${article.lang}/`}${
-          article.slug
-        }`,
+        path: `newsroom/${article.lang === 'en' ? '' : `${article.lang}/`}${article.url
+          }`,
         component: articleTemplate,
         context: {
           ...article,

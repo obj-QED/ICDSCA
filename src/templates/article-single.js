@@ -20,8 +20,19 @@ import {
   TwitterShareButton,
 } from 'react-share';
 
+
+
 const ArticlePage = ({ pageContext, location }) => {
   console.log(pageContext);
+
+  // click video play this
+  const clickVideoPlayThis = (e) => {
+    e.preventDefault();
+    const video = document.getElementById('video_file');
+    video.play();
+    // nocontrols replace with controls attribute
+    video.setAttribute('controls', 'controls');
+  };
 
   return (
     <Layout>
@@ -31,59 +42,31 @@ const ArticlePage = ({ pageContext, location }) => {
           ogTitle={pageContext.Title}
           description={pageContext.Short_description}
           ogDescription={pageContext.Short_description}
-          image={pageContext.Hero_image.childImageSharp.fixed.src}
+          image={pageContext.Preview_image.childImageSharp.fluid.src}
           meta={[]}
         />
-
-        {pageContext.Full_image && (
-          <div
-            className="bg-center bg-cover h-62 md:h-160"
-            style={{
-              backgroundImage: `url(${pageContext.Hero_image.publicURL})`,
-            }}
-          >
-            <div className="row">
-              <div className="relative flex items-center justify-between article__header">
-                <div>
-                  <Link to="/" className="homepage__header-logo">
-                    <IconLogo />
-                  </Link>
-                </div>
-                <div>
-                  <LangDropdown
-                    currentLang={pageContext.currentLang}
-                    langs={pageContext.lang}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
         <div className="row">
           <div className="my-auto ">
-            {!pageContext.Full_image && (
-              <div className="relative flex items-center justify-between article__header">
-                <div>
-                  <Link to="/" className="homepage__header-logo">
-                    <IconLogo />
-                  </Link>
-                </div>
-                <div className="mb-3">
-                  <LangDropdown
-                    currentLang={pageContext.currentLang}
-                    langs={pageContext.lang}
-                  />
-                </div>
+            <div className="relative flex items-center justify-between article__header">
+              <div>
+                <Link to="/" className="homepage__header-logo">
+                  <IconLogo />
+                </Link>
               </div>
-            )}
+              <div className="mb-3">
+                <LangDropdown
+                  currentLang={pageContext.currentLang}
+                  langs={pageContext.lang}
+                />
+              </div>
+            </div>
           </div>
         </div>
         <div className="article__image-row row md:px-4">
           <div className="article__content">
-            {!pageContext.Full_image && (
+            { pageContext.Preview_image && (
               <img
-                src={pageContext.Hero_image.publicURL}
+                src={pageContext.Preview_image.publicURL}
                 className="avatar"
                 alt={pageContext.Title}
               />
@@ -102,7 +85,6 @@ const ArticlePage = ({ pageContext, location }) => {
             <p className="article__last-updated">
               {moment(pageContext.Posted_date).format('MMMM YYYY')}
             </p>
-
             <div className="flex flex-wrap body-post">
               <ReactMarkdown
                 escapeHtml={false}
@@ -123,7 +105,7 @@ const ArticlePage = ({ pageContext, location }) => {
                     <FacebookShareButton
                       quote={pageContext.Title}
                       // description={SEO.description}
-                      image={pageContext.Hero_image.publicURL}
+                      image={pageContext.Preview_image.childImageSharp.fluid.src}
                       url={location.href}
                       className="outline-none"
                     >
@@ -134,7 +116,7 @@ const ArticlePage = ({ pageContext, location }) => {
                     <TwitterShareButton
                       quote={pageContext.Title}
                       // description={SEO.description}
-                      image={pageContext.Hero_image.publicURL}
+                      image={pageContext.Preview_image.childImageSharp.fluid.src}
                       url={location.href}
                       className="outline-none"
                     >
@@ -145,7 +127,7 @@ const ArticlePage = ({ pageContext, location }) => {
                     <LinkedinShareButton
                       quote={pageContext.Title}
                       // description={SEO.description}
-                      image={pageContext.Hero_image.publicURL}
+                      image={pageContext.Preview_image.childImageSharp.fluid.src}
                       url={location.href}
                       className="outline-none"
                     >
@@ -155,6 +137,13 @@ const ArticlePage = ({ pageContext, location }) => {
                 </div>
               </div>
             </div>
+            {pageContext.Video_field &&(
+              <div className="article__video mt-4 w-full body-post-inner sm:w-9/12 cursor-pointer" onClick={clickVideoPlayThis}>
+                <video nocontrols disablePictureInPicture id="video_file" controlsList="nofullscreen nodownload noplaybackrate">
+                  <source src={pageContext.Video_field.publicURL} type="video/mp4" />
+                </video>
+              </div>
+            )}
           </div>
         </div>
       </div>

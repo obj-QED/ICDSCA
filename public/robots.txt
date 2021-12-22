@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.icdsca.com/sitemap.xml
+Host: https://www.icdsca.com

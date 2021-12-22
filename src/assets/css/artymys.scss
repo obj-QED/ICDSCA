@@ -52,14 +52,24 @@
           line-height: 24px;
         }
         .link {
-          font-size: 16px;
+          font-family: "DIN Next W1G", Arial;
+          font-size: 18px;
           font-style: normal;
-          font-weight: 600;
-          line-height: 22px;
-          color: #ea5b1c;
-          display: block;
+          font-weight: 400;
+          line-height: normal;
+          background: #ffece6;
+          color: #f96430;
           margin-top: 16px;
-          text-decoration: underline;
+          transition: .3s background ease-in-out;
+          &:hover {
+            background: #f9672f;
+            color: #fff;
+            svg {
+              path {
+                fill: #fff;
+              }
+            }
+          }
         }
       }
     }
@@ -79,7 +89,7 @@
       }
     }
   }
-  @media( max-width: 480px) {
+  @media (max-width: 480px) {
     .current {
       padding: 30px 20px;
       .descpt {
